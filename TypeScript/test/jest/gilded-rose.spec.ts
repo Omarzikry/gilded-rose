@@ -37,7 +37,7 @@ describe('quality rules', () => {
 });
 
 describe('aged brie quality', () => {
-  it('quality of Aged Brie goes up', () => {
+  it('quality of Aged Brie should go up', () => {
     const gildedRose = new GildedRose([new Item('Aged Brie', 1, 1)]);
     const updatedItems = gildedRose.updateQuality();
     const updatedItem = updatedItems[0];
@@ -105,3 +105,22 @@ describe('sulfuras quality rules', () => {
     expect(updatedItem.sellIn).toBe(1);
   });
 });
+
+describe('conjured items', () => {
+  it('should update quality 2x for conjured items', () => {
+    const gildedRose = new GildedRose([new Item('Conjured', 10, 10)]);
+    const updatedItems = gildedRose.updateQuality();
+    const updatedItem = updatedItems[0];
+    expect(updatedItem.quality).toBe(8);
+    expect(updatedItem.sellIn).toBe(9);
+  });
+
+  it('should ensure quality never goes below 0', () => {
+    const gildedRose = new GildedRose([new Item('Conjured', 0, 1)]);
+    const items = gildedRose.updateQuality();
+    const updatedItem = items[0];
+    expect(updatedItem.quality).toBe(0);
+    expect(updatedItem.sellIn).toBe(-1);
+  });
+})
+

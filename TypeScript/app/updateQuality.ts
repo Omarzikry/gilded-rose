@@ -51,3 +51,11 @@ export const updateQualityForSulfuras = (item: Item): Item => {
 
     return item;
 };
+
+export const updateQualityForConjured = (item: Item): Item => {
+    item = updateItemQuality(item);
+    item = updateItemQuality(item);
+    item.sellIn -= 1;
+
+    return item;
+};

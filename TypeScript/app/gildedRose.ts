@@ -1,5 +1,5 @@
 import { Item } from "./item";
-import { updateQualityForAgedBrie, updateQualityForConcert, updateQualityForGeneralItem, updateQualityForSulfuras } from "./updateQuality";
+import { updateQualityForAgedBrie, updateQualityForConcert, updateQualityForConjured, updateQualityForGeneralItem, updateQualityForSulfuras } from "./updateQuality";
 
 export class GildedRose {
   items: Array<Item>;
@@ -21,7 +21,7 @@ export class GildedRose {
           currentItem = updateQualityForSulfuras(currentItem);
           break;
         case 'Conjured':
-          // add conjured update function
+          currentItem = updateQualityForConjured(currentItem);
           break;
         default:
           currentItem = updateQualityForGeneralItem(currentItem);
