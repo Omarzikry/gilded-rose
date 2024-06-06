@@ -14,6 +14,15 @@ export class GildedRose {
         case 'Aged Brie':
           currentItem = updateQualityForAgedBrie(currentItem);
           break;
+        case 'Backstage passes to a TAFKAL80ETC concert':
+          // add backstage update function
+          break;
+        case 'Sulfuras, Hand of Ragnaros':
+          // add sulfuras update function
+          break;
+        case 'Conjured':
+          // add conjured update function
+          break;
         default:
           currentItem = updateQualityForGeneralItem(currentItem);
       }
