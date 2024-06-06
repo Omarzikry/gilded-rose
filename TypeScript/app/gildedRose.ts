@@ -1,5 +1,5 @@
 import { Item } from "./item";
-import { updateQualityForAgedBrie, updateQualityForGeneralItem } from "./updateQuality";
+import { updateQualityForAgedBrie, updateQualityForConcert, updateQualityForGeneralItem } from "./updateQuality";
 
 export class GildedRose {
   items: Array<Item>;
@@ -15,7 +15,7 @@ export class GildedRose {
           currentItem = updateQualityForAgedBrie(currentItem);
           break;
         case 'Backstage passes to a TAFKAL80ETC concert':
-          // add backstage update function
+          currentItem = updateQualityForConcert(currentItem);
           break;
         case 'Sulfuras, Hand of Ragnaros':
           // add sulfuras update function

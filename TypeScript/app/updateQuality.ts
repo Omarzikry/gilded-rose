@@ -30,3 +30,18 @@ export const updateQualityForAgedBrie = (item): Item => {
 
     return item;
 };
+
+const increaseQualityForConcert = (item: Item): number => {
+    let quality = increaseQuality(item.quality);
+    quality = item.sellIn < 11 ? increaseQuality(quality) : quality;
+    quality = item.sellIn < 6 ? increaseQuality(quality) : quality;
+
+    return quality;
+};
+
+export const updateQualityForConcert = (item): Item => {
+    item.quality = item.sellIn === 0 ? 0 : increaseQualityForConcert(item);
+    item.sellIn -= 1;
+
+    return item;
+};
