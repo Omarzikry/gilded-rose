@@ -1,5 +1,5 @@
 import { Item } from "./item";
-import { updateQualityForAgedBrie, updateQualityForConcert, updateQualityForGeneralItem } from "./updateQuality";
+import { updateQualityForAgedBrie, updateQualityForConcert, updateQualityForGeneralItem, updateQualityForSulfuras } from "./updateQuality";
 
 export class GildedRose {
   items: Array<Item>;
@@ -18,7 +18,7 @@ export class GildedRose {
           currentItem = updateQualityForConcert(currentItem);
           break;
         case 'Sulfuras, Hand of Ragnaros':
-          // add sulfuras update function
+          currentItem = updateQualityForSulfuras(currentItem);
           break;
         case 'Conjured':
           // add conjured update function

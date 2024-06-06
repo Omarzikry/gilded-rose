@@ -45,3 +45,9 @@ export const updateQualityForConcert = (item): Item => {
 
     return item;
 };
+
+export const updateQualityForSulfuras = (item: Item): Item => {
+    item.quality = 80;
+
+    return item;
+};
